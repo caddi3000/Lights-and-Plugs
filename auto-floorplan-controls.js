@@ -1,4 +1,4 @@
-const VERSION = "0.2.0";
+const VERSION = "0.2.1";
 
 const DEFAULT_ZONES = [
   { id:"kids", name:"Bed 2 (Kids)", area:["Bed 2","Kids","Kids Room"], x:18.7, y:35.0 },
@@ -13,11 +13,11 @@ const DEFAULT_ZONES = [
 ];
 
 class AutoFloorplanControls extends HTMLElement {
-  static getStubConfig() { return { title:"Home Controls", image:"/local/auto-floorplan-controls/floorplan.png" }; }
+  static getStubConfig() { return { title:"Home Controls", image:new URL("./floorplan.png", import.meta.url).href }; }
   setConfig(config) {
     this.config = {
       title:"Home Controls",
-      image:"/local/auto-floorplan-controls/floorplan.png",
+      image:new URL("./floorplan.png", import.meta.url).href,
       domains:["light","switch"],
       exclude:[],
       zones:DEFAULT_ZONES,
@@ -139,8 +139,8 @@ class AutoFloorplanControls extends HTMLElement {
           ha-card{overflow:hidden;background:#061723;color:#eef7ff;border-radius:18px}
           .head{display:flex;justify-content:space-between;align-items:end;padding:16px 18px 10px}
           h1,h2{margin:0}.head small,.summary,header small{color:#9eb1c3}
-          .stage{position:relative;margin:0 12px 12px}
-          .stage img{display:block;width:100%;border-radius:14px}
+          .stage{position:relative;margin:0 12px 12px;aspect-ratio:2048/1280;overflow:hidden;border-radius:14px;background:#0b1e2b}
+          .stage img{display:block;width:100%;height:100%;object-fit:contain;border-radius:14px}
           .marker{position:absolute;transform:translate(-50%,-50%);border:1px solid #526474;background:#142431e8;color:white;border-radius:13px;padding:8px 11px;display:flex;gap:7px;align-items:center;cursor:pointer;box-shadow:0 4px 14px #0007}
           .marker.selected{outline:2px solid #17bdf5}.dot{width:13px;height:13px;border-radius:50%;background:#a8bdcc}.dot.active{background:#35d76f;box-shadow:0 0 8px #35d76f}
           .panel{margin:0 12px 14px;background:#0c2231;border:1px solid #28465a;border-radius:14px;padding:14px}

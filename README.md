@@ -1,40 +1,20 @@
-# Auto Floorplan Controls
+# Lights and Plugs v0.2.1
 
-## v0.2.0 — Minimal Controls
+HACS Lovelace/dashboard card.
 
-A deliberately minimal Home Assistant floorplan card for **lights, plugs and switches**.
+Fixes:
+- floorplan.png is bundled beside the JavaScript file
+- the image URL is resolved relative to the HACS-loaded module
+- the floorplan stage has a fixed aspect ratio, preventing marker collapse
+- no power measurements
+- brightness sliders remain for dimmable lights
+- automatic Home Assistant Area discovery remains
 
-### Design
-- The supplied floorplan remains the main interface.
-- No power, energy, climate, solar or EV measurements are shown.
-- A subtle green room indicator means at least one control in that room is ON.
-- Tap a room label to open its compact controls.
-- Tap ON/OFF to control an entity.
-- Tap an entity name/icon for Home Assistant More Info.
-- **All off** is available per room.
-- Dimmable lights get a simple **1–100% brightness slider**.
-- Non-dimmable lights do not show a brightness control.
-- Home Assistant Areas are the source of truth, so entity/device area changes are reflected by the card after registry/card refresh.
-
-### Install manually
-Copy:
-- `dist/auto-floorplan-controls.js` → `/config/www/auto-floorplan-controls/auto-floorplan-controls.js`
-- `assets/floorplan.png` → `/config/www/auto-floorplan-controls/floorplan.png`
-
-Add Dashboard Resource:
-`/local/auto-floorplan-controls/auto-floorplan-controls.js`
-as a **JavaScript Module**.
-
-Then add:
+Card YAML:
 
 ```yaml
 type: custom:auto-floorplan-controls
-title: Home Controls
-image: /local/auto-floorplan-controls/floorplan.png
-domains:
-  - light
-  - switch
+title: Lights & Plugs
 ```
 
-### Area aliases
-Default zones cover Kids, Nursery, Master, Open Plan, Laundry, Bathroom, Porch, Shed and Garage. If your HA Area names differ, the `zones` option can override aliases and floorplan positions.
+Upload the CONTENTS of this ZIP directly to the root of `caddi3000/Lights-and-Plugs`.

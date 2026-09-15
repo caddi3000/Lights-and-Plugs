@@ -1,6 +1,5 @@
 {
-  "name": "Auto Floorplan Controls",
-  "content_in_root": false,
+  "name": "Lights and Plugs",
   "filename": "auto-floorplan-controls.js",
   "render_readme": true
 }

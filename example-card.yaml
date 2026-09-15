@@ -1,6 +1,0 @@
-type: custom:auto-floorplan-controls
-title: Home Controls
-image: /local/auto-floorplan-controls/floorplan.png
-domains:
-  - light
-  - switch
