@@ -1,20 +1,19 @@
-# Lights and Plugs v0.2.1
+# Lights and Plugs v0.2.2
 
-HACS Lovelace/dashboard card.
+Minimal HACS Lovelace floorplan card.
 
-Fixes:
-- floorplan.png is bundled beside the JavaScript file
-- the image URL is resolved relative to the HACS-loaded module
-- the floorplan stage has a fixed aspect ratio, preventing marker collapse
-- no power measurements
-- brightness sliders remain for dimmable lights
-- automatic Home Assistant Area discovery remains
+## v0.2.2
+- Floorplan is embedded directly inside the JavaScript module, eliminating the HACS secondary-image loading problem.
+- The former Open Plan zone is split into **Lounge**, **Dining**, and **Kitchen**.
+- Each new zone uses its matching Home Assistant Area (`Lounge`/`Living Room`, `Dining`/`Dining Room`, `Kitchen`).
+- No power measurements.
+- Dimmable lights retain brightness sliders.
+- Automatic HA Area discovery remains.
 
 Card YAML:
-
 ```yaml
 type: custom:auto-floorplan-controls
 title: Lights & Plugs
 ```
 
-Upload the CONTENTS of this ZIP directly to the root of `caddi3000/Lights-and-Plugs`.
+Upload the contents of this ZIP directly to the repository root, then re-download/update in HACS and hard-refresh the browser.
