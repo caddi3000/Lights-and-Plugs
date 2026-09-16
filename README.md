@@ -1,13 +1,15 @@
 # Lights and Plugs v0.2.3
 
-Uses the exact supplied floorplan image, embedded byte-for-byte in the card to avoid HACS image path issues.
-Open Plan is split into Lounge, Dining and Kitchen. Automatic HA Area discovery, switches/plugs/lights,
-and brightness controls for dimmable lights remain.
+HACS Lovelace floorplan card. v0.2.3 uses the newly approved exact floorplan image, embedded directly into the JavaScript so there is no secondary image loading problem.
+
+- Automatic Home Assistant Area discovery
+- Lounge, Dining and Kitchen remain separate
+- Lights, plugs and switches only; no power measurements
+- Brightness sliders for dimmable lights
 
 ```yaml
 type: custom:auto-floorplan-controls
 title: Lights & Plugs
 ```
 
-Upload the contents of this ZIP directly to the GitHub repository root, replacing the previous project files.
-Then re-download/update in HACS and hard-refresh the browser.
+Upload these files to the repository root on the `main` branch, then re-download/update in HACS and hard-refresh the browser.
